@@ -4,5 +4,13 @@
 # Вам требуется написать программу, которая проверяет счастливость билета.
 
 
+number = int(input('введи шестизначный номер билета: '))
 
-
+sum_first = number // 100000 + (number // 10000)  % 10 + (number // 1000) % 10
+sum_last = number % 10 + (number // 10) % 10 + number // 100 % 10
+print('сумма перых трех цифр:', sum_first)
+print('сумма последних трех цифр:', sum_last)
+if sum_first == sum_last:
+    print('счастливый билет !')
+else:
+    print('не повезло !')
